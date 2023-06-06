@@ -14,7 +14,7 @@ export const options = {
   ],
   ext: {
     loadimpact: {
-      name: 'Customised Load Pattern',
+      name: 'Customised Load Test',
     },
   },
 }
