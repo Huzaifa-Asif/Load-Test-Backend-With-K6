@@ -1,7 +1,7 @@
 import http from 'k6/http'
 import { check, sleep } from 'k6'
 
-const BASE_URL = 'https://testapi.stotte.no/api/v1';
+const BASE_URL = 'https://api.stotte.no/api/v1';
 
 // See https://k6.io/docs/using-k6/k6-options/
 export const options = {
@@ -25,5 +25,5 @@ export default function () {
   
     check(res, { 'success login': (r) => r.status === 200 })
     console.log(`Status Code: ${res.status} - Response Body: ${res.body}`)
-    sleep(0.5)
+    sleep(1)
   }

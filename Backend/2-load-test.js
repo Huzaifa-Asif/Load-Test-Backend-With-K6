@@ -1,13 +1,13 @@
 import http from 'k6/http'
 import { check, sleep } from 'k6'
 
-const BASE_URL = 'https://testapi.stotte.no/api/v1'
+const BASE_URL = 'https://api.stotte.no/api/v1'
 
 // See https://k6.io/docs/using-k6/k6-options/
 export const options = {
   stages: [
-    { duration: '2m', target: 100 }, // traffic ramp-up from 1 to 100 users over 2 minutes.
-    { duration: '5m', target: 100 }, // stay at 100 users for 5 minutes
+    { duration: '2m', target: 20 }, // traffic ramp-up from 1 to 50 users over 2 minutes.
+    { duration: '5m', target: 20 }, // stay at 50 users for 5 minutes
     { duration: '5m', target: 0 }, // ramp-down to 0 users
   ],
   ext: {

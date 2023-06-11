@@ -1,13 +1,13 @@
 import http from 'k6/http'
-import { check } from 'k6'
+import { check, sleep } from 'k6'
 
-const BASE_URL = 'https://testapi.stotte.no/api/v1'
+const BASE_URL = 'https://api.stotte.no/api/v1'
 
 // See https://k6.io/docs/using-k6/k6-options/
 export const options = {
   executor: 'ramping-arrival-rate', //Assure load increase if the system slows
   stages: [
-    { duration: '2h', target: 20000 }, // just slowly ramp-up to a HUGE load
+    { duration: '20m', target: 20000 }, // just slowly ramp-up to a HUGE load
   ],
   ext: {
     loadimpact: {
@@ -23,4 +23,5 @@ export default function () {
   })
   check(loginRes, { 'success login': (r) => r.status === 200 })
   console.log(`Status Code: ${loginRes.status} - Response Body: ${loginRes.body}`)
+  sleep(0.5)
 }
