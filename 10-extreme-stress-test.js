@@ -1,6 +1,6 @@
 import http from 'k6/http'
 
-const BASE_URL = 'https://testapi.stotte.no/api/v1'
+const BASE_URL = 'https://testapi.example.com/api/v1'
 
 // See https://k6.io/docs/using-k6/k6-options/
 export const options = {

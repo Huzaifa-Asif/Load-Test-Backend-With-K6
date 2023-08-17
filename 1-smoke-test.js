@@ -1,7 +1,7 @@
 import http from 'k6/http'
 import { check, sleep } from 'k6'
 
-const BASE_URL = 'https://api.stotte.no/api/v1';
+const BASE_URL = 'https://api.example.com/api/v1';
 
 // See https://k6.io/docs/using-k6/k6-options/
 export const options = {
